@@ -1,16 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Projeto E-commerce</title>
-        <link rel="stylesheet" href="css/stylo.css">
-    </head>
-    <body>
-        <h1>Aqui começa a ser construido o nosso "grande projeto" ao decorrer do curso - Full Stack Development</h1>
-        <p>será um grande desafio para nós que estamos iniciando nesta nova jornada ! mas acreditamos em nosso potêncial, vamos que vamos !!!!!</p>
-    </body>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loja E-commerce</title>
+    <link rel="stylesheet" href="css/stylo.css">
+</head>
+<body>
+    <header>
+        <div class="flex-container menu">
+            <div><h1>Fast Store</h1></div>
+            <ul class="list-items">
+                <li><a href="#quem-somos">Serviços</a></li>
+                <li><a href="#servicos">Compras</a></li>
+                <li><a href="#planos">Login</a></li>
 
-    <script src="app/app.js"></script>
+        
+            </div>   
+        </ul>    
+    </header>
+
+    <div class="flex-container apresentações">
+        <div class="texto-apresentações">
+            <h1>Fast Store<br></h1>
+            <h3>Loja de Produtos Eletronicos</h3>
+            <p>O melhor serviço para você!</p>
+            <a href="" class="btn">Saiba Mais!</a>
+        </div>
+
+        <div>
+            <div><img src="css/imagens/eletronico.jpg" height="500px" alt="banner de apresentação"></div>
+        </div>
+    </div>
+
+    <div class="flex-container" id="quem-somos">
+       
+        <div>
+            <h2>Quem somos</h2>
+            <p>Somos a maior empresa E-commerce da America Latina</p>
+            <p>Aqui você encontra produtos Elétricos e Eletronicos.</p>
+            <p>Produtos de Infórmática (Monitores, Pc Games, Teclados, Mouse e muitos outros produtos.</p>
+        </div>
+        <div>
+            <img src="css/imagens/eletronico2.png" height="500px" alt="Eletronico">
+        </div>
+    </div>
+
+    <div class="container-externo">
+        <div class="flex-container" id="serviços">
+            <div>
+                <h2>Serviços</h2>
+            </div>
+
+            <div class="list-serviços">
+                <div class="item-serviços">
+                    <div><img src="css/imagens/j1.jpg" height="300px"  alt="Informática"></div>
+                    <p>Informatica</p>
+                    <a href="#">Comprar Agora</a>
+                </div>
+
+                <div class="item-serviços">
+                <div><img src="css/imagens/j2.jpg" height="300px"  alt="pacote de viagens"></div>
+                <p>Hardware</p>
+                <a href="#">Comprar Agora</a>
+                </div>
+
+                <div class="item-serviços">
+                    <div><img src="css/imagens/j3.jpg" height="300px"  alt="roteiros personalizados"></div>
+                    <p>Perifericos</p>
+                    <a href="#">Comprar Agora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-container" id="planos"><br>
+
+        <div><h2>Produtos</h2></div>
+
+        <div class="list-planos">
+            <div class="item-planos">
+                <h3>PC Games</h3>
+                <ul>
+                <li>Notebooks Dell</li>
+                    <li>Hd, SSD até 1Tb</li>
+                    <li>Mouse, Teclados</li>
+                </ul>
+                <a href="#" class="btn">Saiba Mais!</a>
+            </div>
+
+            <div class="item-planos">
+                <h3>Segurança Eletronica</h3>
+                <br>
+                <ul>
+                    <li>Suporte 24h</li>
+                    <li>Câmeras de Segurança</li>
+                    <li>Alarmes</li>
+                    <li>Cercas Elétricas</li>
+                   
+                </ul>
+                <a href="#" class="btn">Saiba Mais!</a>
+            </div>
+
+            <div class="item-planos">
+                <h3>Smartphones</h3>
+                <br>
+                <ul>
+                    <li>Samsung</li>
+                    <li>Motorola</li>
+                    <li>Iphones</li>
+                    <li>Xiaomi</li>
+                    <li>LG</li>
+                    <li>Sony</li>
+                </ul>
+                <a href="#" class="btn">Saiba Mais!</a>
+            
+            </div>
+        </div>
+    </div>
+
+    <footer> 
+        <div class="flex-container footer">
+            <p>&copy; 2021 CSS Flexbox</p>
+            <p>Desenvolvido por: Devs Full Stack Tera - Desenvolvedores Web</p>
+        </div>
+        
+    </footer>
+</body>
 </html>
