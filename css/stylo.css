@@ -289,3 +289,63 @@ footer .footer{
         margin-bottom: 20px;
     }
 }
+
+
+/* Estilo para formulários */
+
+form {
+    margin: auto;
+    padding: 5px 40px;
+}
+
+#botoesFormulario {
+    display:block;
+}
+
+input[type="text"], input[type="email"], input[type="date"] {
+    padding: 5px;
+    border: solid 1px;
+    width: 300px;
+}
+
+input:focus {
+    outline: none;
+    border: solid 2px rgb(29, 15, 219);
+}
+
+.tituloFormulario {
+    padding: 10px 30px;
+    color: white;
+    font-size: 28px;
+}
+
+.campoFormulario {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 5px 20px;
+}
+
+.selecaoFormulario {
+    padding: 5px 20px;
+}
+
+.botaoFormulario {
+    width: 120px;
+    height: 40px;
+    border-radius: 30px;
+    border: solid black;
+    margin: 25px;
+    background-color: black;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.botaoFormulario:hover {
+    transform: scale(1.1);
+    background-color: rgb(18, 42, 87);
+    border-radius: 30px;
+    border-width: 2px;
+
+}
+

@@ -8,40 +8,99 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Conclua seu cadastro</h1>
-    <form action="">
-        <fieldset>
-            <legend>Conclua seu cadastro</legend>
+    <header>
+        <h1 class="tituloFormulario">Conclua seu cadastro</h1>
+    </header>
 
-            <div class="formulario">
+    <section id="cadastroEtapa2">
+  
+        <form action="">
+        <div class="formulario">
+            <div class="campoFormulario">
                 <label for="nomeUsuario">Nome</label><br>
                 <input type="text" placeholder="Nome e sobrenome" name="nomeUsuario" id="nomeUsuario"><br>
-        
+            </div>
+                
+            <div class="campoFormulario">
                 <label for="cpfUsuario">CPF</label><br>
                 <input type="text" oninput="validarCpf(this.value)" placeholder="Digite apenas números" id="cpfUsuario"><br>
-       
+            </div>
+               
+            <div class="campoFormulario">
                 <label for="idUsuario">Documento de identificação</label><br>
-                <input type="text" placeholder="Número do RG ou CNH" name="idUsuario" id="idUsuario"><br>
-        
-                <p>Sexo</p>
-                <input type="radio" name="masculino" id="masculino" value="Masculino">
-                <label for="masculino">Masculino</label><br>
-                <input type="radio" name="feminino" id="feminino" value="Feminino">
-                <label for="feminino">Feminino</label><br>
-
+                <input type="text" placeholder="Número do RG ou da CNH" name="idUsuario" id="idUsuario"><br>
+            </div>
+                
+            <p class="campoFormulario">Sexo</p>
+                <div class="selecaoFormulario">
+                    <input type="radio" name="sexoUsuario" id="masculino" value="Masculino">
+                    <label for="masculino">Masculino</label><br>
+                    <input type="radio" name="sexoUsuario" id="feminino" value="Feminino">
+                    <label for="feminino">Feminino</label><br>
+                </div>
+            <div class="campoFormulario">
                 <label for="nascimentoUsuario">Data de nascimento</label><br>
                 <input type="date"  name="nascimentoUsuario" id="nascimentoUsuario"><br>
-
+            </div>  
+               
+            <div class="campoFormulario">
                 <label for="emailUsuario">E-mail</label><br>
                 <input type="email" onblur="validarEmail()" name="emailUsuario" id="emailUsuario"><br>
-                <span id="error-emailUsuario"></span>
-
-                <label for="senhaUsuario">Senha</label><br>
-                <input type="text" minlength="8" placeholder="Pelo menos 8 caracteres" name="senhaUsuario" id="senhaUsuario">
             </div>
-        </fieldset>
-    </form>
 
-    <script src="app/app.js"></script>
+            <div class="campoFormulario">
+                <label for="senhaUsuario">Senha</label><br>
+                <input type="text" minlength="8" placeholder="Pelo menos 8 caracteres" name="senhaUsuario" id="senhaUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="cepUsuario">CEP</label><br>
+                <input type="text" name="cepUsuario" id="cepUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="ruaUsuario">Rua</label><br>
+                <input type="text" name="ruaUsuario" id="ruaUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="nEndUsuario">Número</label><br>
+                <input type="text" name="nEndUsuario" id="nEndUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="compEndUsuario">Complemento</label><br>
+                <input type="text" placeholder="Apartamento, bloco etc." name="compEndUsuario" id="compEndUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="bairroUsuario">Bairro</label><br>
+                <input type="text" name="bairroUsuario" id="bairroUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="cidadeUsuario">Cidade</label><br>
+                <input type="text" name="cidadeUsuario" id="cidadeUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="estadoUsuario">Estado</label><br>
+                <input type="text" name="estadoUsuario" id="estadoUsuario">
+            </div>
+        </div>
+     </form>
+    
+    </section>
+
+    <section class="botoesFormulario">
+       
+    <a href=""><button class="botaoFormulario">Concluir</button></a>
+    <a href="cadastro-etapa1.html"><button class="botaoFormulario">Voltar</button></a>
+     
+    </section> 
+
+        <p>Já possui uma conta? <a href="">Faça seu login</a>.</p>
+   
+        <script src="app/app.js"></script>
 </body>
 </html>

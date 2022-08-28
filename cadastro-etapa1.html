@@ -8,24 +8,47 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Crie sua conta</h1>
-    <form action="">
-        <label for="nomeUsuario">Nome</label><br>
-        <input type="text" placeholder="Nome e sobrenome" name="nomeUsuario" id="nomeUsuario"><br>
-        
-        <label for="cpfUsuario">CPF</label><br>
-        <input type="text" oninput="validarCpf(this.value)" placeholder="Digite apenas números" id="cpfUsuario"><br>
-       
-        <label for="emailUsuario">E-mail</label><br>
-        <input type="email" onblur="validarEmail()" name="emailUsuario" id="emailUsuario"><br>
-        <span id="error-emailUsuario"></span>
+    <header>
+        <h1 class="tituloFormulario">Crie sua conta</h1>
+    </header>
+    
+    <section id="cadastroEtapa1">
 
-        <label for="senhaUsuario">Senha</label><br>
-        <input type="text" minlength="8" placeholder="Pelo menos 8 caracteres" name="senhaUsuario" id="senhaUsuario">
+    <form action="">
+        <div class="formulario">
+            <div class="campoFormulario">
+                <label for="nomeUsuario">Nome</label><br>
+                <input type="text" placeholder="Nome e sobrenome" name="nomeUsuario" id="nomeUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">    
+                <label for="cpfUsuario">CPF</label><br>
+                <input type="text" oninput="validarCpf(this.value)" placeholder="Digite apenas números" id="cpfUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="emailUsuario">E-mail</label><br>
+                 <input type="email" onblur="validarEmail()" name="emailUsuario" id="emailUsuario"><br>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="senhaUsuario">Senha</label><br>
+                <input type="text" minlength="8" onblur="validarSenha()" placeholder="Pelo menos 8 caracteres" name="senhaUsuario" id="senhaUsuario">
+            </div>
     </form>
-       
-        <input type="submit" name="continuar" value="Continuar">    
+
+    </section>
+    
+    <section class="botoesFormulario">
+
+    <form action="cadastro-etapa2.html">
+        <input class="botaoFormulario" type="submit" name="continuar" value="Continuar"> 
+    </form>
+    
+    </section>
+    
         <p>Ao criar uma conta, você concorda com as <a href="">Condições de Uso</a> da Fast Store e aceita as <a href="">Configurações de Privacidade</a>.</p>
+    
     <script src="app/app.js"></script>
 </body>
 </html>

@@ -1,3 +1,12 @@
+// Função para validar senha
+
+    function validarSenha() {
+        let compSenha = document.getElementById("senhaUsuario")
+        if(compSenha.value.length < 8) {
+            alert("Atenção! A senha precisa ter no mínimo 8 caracteres");
+        }
+    }
+
 // Função para validar Email
     function validarEmail() {
         var email = document.querySelector("#emailUsuario");
@@ -8,7 +17,6 @@
         }
 
     }
-
 
 // Função para validar CPF
     function validarCpf(cpf) {	
@@ -54,4 +62,34 @@
     return true;   
 }
 
+// Função para completar endereço pelo CEP
+    function buscaCep() {
+        let cep = document.getElementById("cepUsuario").value;
+        if(cep !== "") {
+            let url = "https://brasilapi.com.br/api/cep/v1/" + cep;
 
+            let request = new XMLHttpRequest();
+            request.open("GET", url);
+            request.send();
+
+            // Tratamento da resposta de requisição
+            request.onload = function() {
+                if(request.status === 200){
+                    let endereco = JSON.parse(request.response);
+                    document.getElementById("ruaUsuario").value = endereco.street;
+                    document.getElementById("bairroUsuario").value = endereco.neighborhood;
+                    document.getElementById("cidadeUsuario").value = endereco.city;
+                    document.getElementById("estadoUsuario").value = endereco.state;
+                } else if(request.status === 404){
+                    alert("Atenção! CEP inválido.");
+                } else {
+                    alert("Erro de requisição.");
+                }
+                }
+            }
+        }        
+
+    window.onload = function() {
+        let cepUsuario = document.getElementById("cepUsuario");
+        cepUsuario.addEventListener("blur", buscaCep);
+    }
