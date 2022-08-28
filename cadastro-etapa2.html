@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylo.css"></li>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Conclua seu cadastro</h1>
+    <form action="">
+        <fieldset>
+            <legend>Conclua seu cadastro</legend>
+
+            <div class="formulario">
+                <label for="nomeUsuario">Nome</label><br>
+                <input type="text" placeholder="Nome e sobrenome" name="nomeUsuario" id="nomeUsuario"><br>
+        
+                <label for="cpfUsuario">CPF</label><br>
+                <input type="text" oninput="validarCpf(this.value)" placeholder="Digite apenas números" id="cpfUsuario"><br>
+       
+                <label for="idUsuario">Documento de identificação</label><br>
+                <input type="text" placeholder="Número do RG ou CNH" name="idUsuario" id="idUsuario"><br>
+        
+                <p>Sexo</p>
+                <input type="radio" name="masculino" id="masculino" value="Masculino">
+                <label for="masculino">Masculino</label><br>
+                <input type="radio" name="feminino" id="feminino" value="Feminino">
+                <label for="feminino">Feminino</label><br>
+
+                <label for="nascimentoUsuario">Data de nascimento</label><br>
+                <input type="date"  name="nascimentoUsuario" id="nascimentoUsuario"><br>
+
+                <label for="emailUsuario">E-mail</label><br>
+                <input type="email" onblur="validarEmail()" name="emailUsuario" id="emailUsuario"><br>
+                <span id="error-emailUsuario"></span>
+
+                <label for="senhaUsuario">Senha</label><br>
+                <input type="text" minlength="8" placeholder="Pelo menos 8 caracteres" name="senhaUsuario" id="senhaUsuario">
+            </div>
+        </fieldset>
+    </form>
+
+    <script src="app/app.js"></script>
+</body>
+</html>

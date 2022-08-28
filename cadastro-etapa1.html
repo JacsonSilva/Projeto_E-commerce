@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylo.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Crie sua conta</h1>
+    <form action="">
+        <label for="nomeUsuario">Nome</label><br>
+        <input type="text" placeholder="Nome e sobrenome" name="nomeUsuario" id="nomeUsuario"><br>
+        
+        <label for="cpfUsuario">CPF</label><br>
+        <input type="text" oninput="validarCpf(this.value)" placeholder="Digite apenas números" id="cpfUsuario"><br>
+       
+        <label for="emailUsuario">E-mail</label><br>
+        <input type="email" onblur="validarEmail()" name="emailUsuario" id="emailUsuario"><br>
+        <span id="error-emailUsuario"></span>
+
+        <label for="senhaUsuario">Senha</label><br>
+        <input type="text" minlength="8" placeholder="Pelo menos 8 caracteres" name="senhaUsuario" id="senhaUsuario">
+    </form>
+       
+        <input type="submit" name="continuar" value="Continuar">    
+        <p>Ao criar uma conta, você concorda com as <a href="">Condições de Uso</a> da Fast Store e aceita as <a href="">Configurações de Privacidade</a>.</p>
+    <script src="app/app.js"></script>
+</body>
+</html>
