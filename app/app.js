@@ -1,9 +1,43 @@
-// Função para validar senha
+// Função para validar comprimento da senha
 
     function validarSenha() {
-        let compSenha = document.getElementById("senhaUsuario")
-        if(compSenha.value.length < 8) {
+        let comprimentoSenha = document.getElementById("senhaUsuario");
+        if(comprimentoSenha.value.length > 0 && comprimentoSenha.value.length < 8) {
             alert("Atenção! A senha precisa ter no mínimo 8 caracteres");
+            comprimentoSenha.value = "";
+        }
+    }
+
+// Função para ocultar senha
+
+    function ocultarSenha() {
+        let senha = document.getElementById("senhaUsuario");
+        if(senha.type == "password") {
+            senha.type = "text";
+        } else {
+            senha.type = "password";
+        }
+    }
+
+// Função para ocultar segunda senha
+
+function ocultarSegundaSenha() {
+    let senha = document.getElementById("senhaUsuarioSegunda");
+    if(senha.type == "password") {
+        senha.type = "text";
+    } else {
+        senha.type = "password";
+    }
+}
+
+//Função para validar senha (verifica se a senha informada pela segunda vez é igual à primeira)
+
+    function validarSegundaSenha() {
+        let senhaSegunda = document.getElementById("senhaUsuarioSegunda");
+        let senhaPrimeira = document.getElementById("senhaUsuario");
+        if(senhaSegunda !== senhaPrimeira) {
+            alert("Atenção! Senhas não conferem. Tente novamente")
+            senhaSegunda.value = "";
         }
     }
 
@@ -14,8 +48,8 @@
 
         if(!email.checkValidity()) {
             alert("Atenção! Digite um e-mail válido!");
+            email.value = "";
         }
-
     }
 
 // Função para validar CPF
@@ -48,6 +82,8 @@
 			rev = 0;	
 		if (rev != parseInt(cpf.charAt(9)))		
         alert("Atenção! Digite um CPF válido.");
+        document.getElementById("cpfUsuario").value = "";
+        
 
 	// Valida segundo digito	
 	add = 0;	
@@ -58,6 +94,7 @@
 		rev = 0;	
 	if (rev != parseInt(cpf.charAt(10)))
         alert("Atenção! Digite um CPF válido.");
+        document.getElementById("cpfUsuario").value = "";
     
     return true;   
 }
@@ -82,6 +119,7 @@
                     document.getElementById("estadoUsuario").value = endereco.state;
                 } else if(request.status === 404){
                     alert("Atenção! CEP inválido.");
+                    document.getElementById("cepUsuario").value = "";
                 } else {
                     alert("Erro de requisição.");
                 }
@@ -92,4 +130,5 @@
     window.onload = function() {
         let cepUsuario = document.getElementById("cepUsuario");
         cepUsuario.addEventListener("blur", buscaCep);
+       
     }
