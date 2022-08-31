@@ -3,7 +3,11 @@
     function validarSenha() {
         let comprimentoSenha = document.getElementById("senhaUsuario");
         if(comprimentoSenha.value.length > 0 && comprimentoSenha.value.length < 8) {
-            alert("Atenção! A senha precisa ter no mínimo 8 caracteres");
+            swal({
+                title: "Atenção!",
+                text: "A senha deve ter pelo menos 8 caracteres.",
+                icon: "error",
+              });
             comprimentoSenha.value = "";
         }
     }
@@ -22,32 +26,39 @@
 // Função para ocultar segunda senha
 
 function ocultarSegundaSenha() {
-    let senha = document.getElementById("senhaUsuarioSegunda");
-    if(senha.type == "password") {
-        senha.type = "text";
+    let senhaSegunda = document.getElementById("senhaUsuarioSegunda");
+    if(senhaSegunda.type == "password") {
+        senhaSegunda.type = "text";
     } else {
-        senha.type = "password";
+        senhaSegunda.type = "password";
     }
 }
 
-//Função para validar senha (verifica se a senha informada pela segunda vez é igual à primeira)
+//Função para validar segunda senha (verifica se a senha informada pela segunda vez é igual à primeira)
 
     function validarSegundaSenha() {
-        let senhaSegunda = document.getElementById("senhaUsuarioSegunda");
-        let senhaPrimeira = document.getElementById("senhaUsuario");
+        let senhaSegunda = document.getElementById("senhaUsuarioSegunda").value;
+        let senhaPrimeira = document.getElementById("senhaUsuario").value;
         if(senhaSegunda !== senhaPrimeira) {
-            alert("Atenção! Senhas não conferem. Tente novamente")
+            swal({
+                title: "Atenção!",
+                text: "As senhas não conferem. Tente novamente.",
+                icon: "error",
+              });
             senhaSegunda.value = "";
         }
     }
 
 // Função para validar Email
     function validarEmail() {
-        var email = document.querySelector("#emailUsuario");
-        var error = document.querySelector("#error-emailUsuario");
+        var email = document.getElementById("emailUsuario");
 
         if(!email.checkValidity()) {
-            alert("Atenção! Digite um e-mail válido!");
+            swal({
+                title: "Atenção!",
+                text: "Digite um e-mail válido.",
+                icon: "error",
+              });
             email.value = "";
         }
     }
@@ -74,27 +85,29 @@ function ocultarSegundaSenha() {
 			return false;
 
 	// Valida primeiro digito	
-	add = 0;	
+	soma = 0;	
 	for (i=0; i < 9; i ++)		
-		add += parseInt(cpf.charAt(i)) * (10 - i);	
-		rev = 11 - (add % 11);	
-		if (rev == 10 || rev == 11)		
-			rev = 0;	
-		if (rev != parseInt(cpf.charAt(9)))		
-        alert("Atenção! Digite um CPF válido.");
-        document.getElementById("cpfUsuario").value = "";
-        
+		soma += parseInt(cpf.charAt(i)) * (10 - i);	
+		resto = 11 - (soma % 11);	
+		if (resto == 10 || resto == 11)		
+			resto = 0;	
+		if (resto != parseInt(cpf.charAt(9)))		
 
 	// Valida segundo digito	
-	add = 0;	
+	soma = 0;	
 	for (i = 0; i < 10; i ++)		
-		add += parseInt(cpf.charAt(i)) * (11 - i);	
-	rev = 11 - (add % 11);	
-	if (rev == 10 || rev == 11)	
-		rev = 0;	
-	if (rev != parseInt(cpf.charAt(10)))
-        alert("Atenção! Digite um CPF válido.");
-        document.getElementById("cpfUsuario").value = "";
+		soma += parseInt(cpf.charAt(i)) * (11 - i);	
+	resto = 11 - (soma % 11);	
+	if (resto == 10 || resto == 11)	
+		resto = 0;	
+	if (resto != parseInt(cpf.charAt(10)))
+    
+    swal({
+        title: "Atenção!",
+        text: "CPF inválido Tente novamente.",
+        icon: "error",
+        });
+    document.getElementById("cpfUsuario").value = "";
     
     return true;   
 }
@@ -118,7 +131,11 @@ function ocultarSegundaSenha() {
                     document.getElementById("cidadeUsuario").value = endereco.city;
                     document.getElementById("estadoUsuario").value = endereco.state;
                 } else if(request.status === 404){
-                    alert("Atenção! CEP inválido.");
+                    swal({
+                        title: "Atenção!",
+                        text: "CEP inválido. Tente novamente.",
+                        icon: "error",
+                      });
                     document.getElementById("cepUsuario").value = "";
                 } else {
                     alert("Erro de requisição.");
