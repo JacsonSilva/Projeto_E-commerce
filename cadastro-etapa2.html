@@ -28,13 +28,13 @@
         <form action="">
         <div class="formulario">
             <div class="campoFormulario">
-                <label for="nomeUsuario">Nome</label><br>
-                <input type="text" placeholder="Nome e sobrenome" name="nomeUsuario" id="nomeUsuario"><br>
+                <label for="nomeUsuarioInformado">Nome</label><br>
+                <input type="text" disabled="disabled" name="nomeUsuarioInformado" id="nomeUsuarioInformado" onload="carregarNome()"><br>
             </div>
                 
             <div class="campoFormulario">
-                <label for="cpfUsuario">CPF</label><br>
-                <input type="text" oninput="validarCpf(this.value)" placeholder="Digite apenas números" id="cpfUsuario"><br>
+                <label for="cpfUsuarioInformado">CPF</label><br>
+                <input type="text" disabled="disabled" name="cpfUsuarioInformado" id="cpfUsuarioInformado" onload="carregarCpf()"><br>
             </div>
                
             <div class="campoFormulario">
@@ -55,14 +55,14 @@
             </div>  
                
             <div class="campoFormulario">
-                <label for="emailUsuario">E-mail</label><br>
-                <input type="email" onblur="validarEmail()" name="emailUsuario" id="emailUsuario"><br>
+                <label for="emailUsuarioInformado">E-mail</label><br>
+                <input type="email" disabled="disabled" name="emailUsuarioInformado" id="emailUsuarioInformado" onblur="carregarEmail()"><br>
             </div>
 
             <div class="campoFormulario">
-                <label for="senhaUsuario">Senha</label><br>
-                <input type="password" minlength="8" onblur="validarSenha()" placeholder="Pelo menos 8 caracteres" name="senhaUsuario" id="senhaUsuario"><br>
-                <input class="checkbox" type="checkbox" onclick="ocultarSenha()" id="mostrarSenha"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
+                <label for="senhaUsuarioInformada">Senha</label><br>
+                <input type="password" disabled="disabled" name="senhaUsuarioInformada" id="senhaUsuarioInformada" onload="carregarSenha()"><br>
+                <input class="checkbox" type="checkbox" onclick="ocultarSenhaInformada()" id="mostrarSenha"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
             </div>
 
             <div class="campoFormulario">
@@ -72,7 +72,7 @@
 
             <div class="campoFormulario">
                 <label for="ruaUsuario">Rua</label><br>
-                <input type="text" name="ruaUsuario" id="ruaUsuario"><br>
+                <input type="text" disabled="disabled" name="ruaUsuario" id="ruaUsuario"><br>
             </div>
 
             <div class="campoFormulario">
@@ -87,17 +87,17 @@
 
             <div class="campoFormulario">
                 <label for="bairroUsuario">Bairro</label><br>
-                <input type="text" name="bairroUsuario" id="bairroUsuario"><br>
+                <input type="text" disabled="disabled" name="bairroUsuario" id="bairroUsuario"><br>
             </div>
 
             <div class="campoFormulario">
                 <label for="cidadeUsuario">Cidade</label><br>
-                <input type="text" name="cidadeUsuario" id="cidadeUsuario"><br>
+                <input type="text" disabled="disabled" name="cidadeUsuario" id="cidadeUsuario"><br>
             </div>
 
             <div class="campoFormulario">
                 <label for="estadoUsuario">Estado</label><br>
-                <input type="text" name="estadoUsuario" id="estadoUsuario">
+                <input type="text" disabled="disabled" name="estadoUsuario" id="estadoUsuario">
             </div>
         </div>
      </form>

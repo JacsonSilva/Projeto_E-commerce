@@ -34,6 +34,17 @@ function ocultarSegundaSenha() {
     }
 }
 
+// Função para ocultar senha na etapa 2 do formulário de cadastro
+
+function ocultarSenhaInformada() {
+    let senhaInformada = document.getElementById("senhaUsuarioInformada");
+    if(senhaInformada.type == "password") {
+        senhaInformada.type = "text";
+    } else {
+        senhaInformada.type = "password";
+    }
+}
+
 //Função para validar segunda senha (verifica se a senha informada pela segunda vez é igual à primeira)
 
     function validarSegundaSenha() {
@@ -64,13 +75,10 @@ function ocultarSegundaSenha() {
     }
 
 // Função para validar CPF
-    function validarCpf(cpf) {	
-
-    // Elimina caracteres não numéricos
-    cpf = cpf.replace(/[^\d]+/g,'');	
-	if(cpf == '') return false;
-
-    // Elimina CPFs invalidos conhecidos
+function validarCpf(cpf) {	
+	cpf = cpf.replace(/[^\d]+/g,'');	
+	if(cpf == '') return false;	
+	// Elimina CPFs invalidos conhecidos	
 	if (cpf.length != 11 || 
 		cpf == "00000000000" || 
 		cpf == "11111111111" || 
@@ -82,34 +90,27 @@ function ocultarSegundaSenha() {
 		cpf == "77777777777" || 
 		cpf == "88888888888" || 
 		cpf == "99999999999")
-			return false;
-
-	// Valida primeiro digito	
-	soma = 0;	
+			return false;		
+	// Valida 1o digito	
+	add = 0;	
 	for (i=0; i < 9; i ++)		
-		soma += parseInt(cpf.charAt(i)) * (10 - i);	
-		resto = 11 - (soma % 11);	
-		if (resto == 10 || resto == 11)		
-			resto = 0;	
-		if (resto != parseInt(cpf.charAt(9)))		
-
-	// Valida segundo digito	
-	soma = 0;	
+		add += parseInt(cpf.charAt(i)) * (10 - i);	
+		rev = 11 - (add % 11);	
+		if (rev == 10 || rev == 11)		
+			rev = 0;	
+		if (rev != parseInt(cpf.charAt(9)))		
+            return false;
+    // Valida 2o digito	
+	add = 0;	
 	for (i = 0; i < 10; i ++)		
-		soma += parseInt(cpf.charAt(i)) * (11 - i);	
-	resto = 11 - (soma % 11);	
-	if (resto == 10 || resto == 11)	
-		resto = 0;	
-	if (resto != parseInt(cpf.charAt(10)))
-    
-    swal({
-        title: "Atenção!",
-        text: "CPF inválido Tente novamente.",
-        icon: "error",
-        });
-    document.getElementById("cpfUsuario").value = "";
-    
-    return true;   
+		add += parseInt(cpf.charAt(i)) * (11 - i);	
+	    rev = 11 - (add % 11);	
+	    if (rev == 10 || rev == 11)	
+		    rev = 0;	
+	    if (rev != parseInt(cpf.charAt(10)))
+            alert("Atenção! CPF inválido. Tente novamente");
+                        
+	return true;   
 }
 
 // Função para completar endereço pelo CEP
@@ -149,3 +150,59 @@ function ocultarSegundaSenha() {
         cepUsuario.addEventListener("blur", buscaCep);
        
     }
+
+// Função para armazenar nome informado na etapa 1 do formulário de cadastro
+ 
+    function salvarNome() {
+        localStorage.nome = document.getElementById("nomeUsuario").value;
+        }
+    
+    console.log(localStorage.nome);
+
+    function carregarNome() {
+        document.getElementById("nomeUsuarioInformado").value = localStorage.nome;
+    }
+
+    console.log(carregarNome());
+
+// Função para armazenar CPF informado na etapa 1 do formulário de cadastro
+ 
+    function salvarCpf() {
+        localStorage.cpf = document.getElementById("cpfUsuario").value;
+    }
+
+    console.log(localStorage.cpf);
+
+    function carregarCpf() {
+        document.getElementById("cpfUsuarioInformado").value = localStorage.cpf;
+    }
+
+    console.log(carregarCpf());
+
+// Função para armazenar e-mail informado na etapa 1 do formulário de cadastro
+ 
+    function salvarEmail() {
+        localStorage.email = document.getElementById("emailUsuario").value;
+    }
+
+    console.log(localStorage.email);
+
+    function carregarEmail() {
+        document.getElementById("emailUsuarioInformado").value = localStorage.email;
+    }
+
+    console.log(carregarEmail());
+
+// Função para armazenar senha informada na etapa 1 do formulário de cadastro
+ 
+    function salvarSenha() {
+        localStorage.senha = document.getElementById("senhaUsuario").value;
+    }
+
+    console.log(localStorage.senha);
+
+    function carregarSenha() {
+        document.getElementById("senhaUsuarioInformada").value = localStorage.senha;
+    }
+
+    console.log(carregarSenha());
