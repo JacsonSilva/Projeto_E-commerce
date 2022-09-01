@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylo.css"></li>
-    <title>Document</title>
+    <title>Conclua seu cadastro</title>
 </head>
 <body>
     <header>
@@ -39,19 +39,21 @@
                
             <div class="campoFormulario">
                 <label for="idUsuario">Documento de identificação</label><br>
-                <input type="text" placeholder="Número do RG ou da CNH" name="idUsuario" id="idUsuario"><br>
+                <input type="text" placeholder="Número do RG ou da CNH" required="" name="idUsuario" id="idUsuario"><br>
             </div>
                 
             <p class="campoFormulario">Sexo</p>
                 <div class="selecaoFormulario">
                     <input type="radio" name="sexoUsuario" id="masculino" value="Masculino">
-                    <label for="masculino">Masculino</label><br>
+                    <label for="masculino">Feminino</label><br>
                     <input type="radio" name="sexoUsuario" id="feminino" value="Feminino">
-                    <label for="feminino">Feminino</label><br>
+                    <label for="feminino">Masculino</label><br>
+                    <input type="radio" name="sexoUsuario" id="naoInformado" value="Não informado">
+                    <label for="feminino">Prefiro não informar</label><br>
                 </div>
             <div class="campoFormulario">
                 <label for="nascimentoUsuario">Data de nascimento</label><br>
-                <input type="date"  name="nascimentoUsuario" id="nascimentoUsuario"><br>
+                <input type="date" required="" name="nascimentoUsuario" id="nascimentoUsuario"><br>
             </div>  
                
             <div class="campoFormulario">
@@ -60,24 +62,30 @@
             </div>
 
             <div class="campoFormulario">
-                <label for="senhaUsuarioInformada">Senha</label><br>
-                <input type="password" disabled="disabled" name="senhaUsuarioInformada" id="senhaUsuarioInformada" onload="carregarSenha()"><br>
-                <input class="checkbox" type="checkbox" onclick="ocultarSenhaInformada()" id="mostrarSenha"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
+                <label for="senhaUsuario">Senha</label><br>
+                <input type="password" minlength="8" onblur="validarSenha()" placeholder="Pelo menos 8 caracteres" required="" name="senhaUsuario" id="senhaUsuario"><br>
+                <input class="checkbox" type="checkbox" onclick="ocultarSenha()" id="mostrarSenha"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
+            </div>
+
+            <div class="campoFormulario">
+                <label for="senhaUsuarioSegunda">Informe a senha novamente</label><br>
+                <input type="password" minlength="8" onblur="validarSegundaSenha()" placeholder="Pelo menos 8 caracteres" required="" name="senhaUsuarioSegunda" id="senhaUsuarioSegunda"><br>
+                <input class="checkbox" type="checkbox" onclick="ocultarSegundaSenha()" id="mostrarSenhaSegunda"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
             </div>
 
             <div class="campoFormulario">
                 <label for="cepUsuario">CEP</label><br>
-                <input type="text" name="cepUsuario" id="cepUsuario"><br>
+                <input type="text" placeholder="CEP" required="" name="cepUsuario" id="cepUsuario"><br>
             </div>
 
             <div class="campoFormulario">
                 <label for="ruaUsuario">Rua</label><br>
-                <input type="text" disabled="disabled" name="ruaUsuario" id="ruaUsuario"><br>
+                <input type="text" placeholder="Rua" disabled="disabled" name="ruaUsuario" id="ruaUsuario"><br>
             </div>
 
             <div class="campoFormulario">
                 <label for="nEndUsuario">Número</label><br>
-                <input type="text" name="nEndUsuario" id="nEndUsuario"><br>
+                <input type="text" placeholder="Número" placeholder="Número" required="" name="nEndUsuario" id="nEndUsuario"><br>
             </div>
 
             <div class="campoFormulario">
@@ -87,17 +95,17 @@
 
             <div class="campoFormulario">
                 <label for="bairroUsuario">Bairro</label><br>
-                <input type="text" disabled="disabled" name="bairroUsuario" id="bairroUsuario"><br>
+                <input type="text" placeholder="Bairro" disabled="disabled" name="bairroUsuario" id="bairroUsuario"><br>
             </div>
 
             <div class="campoFormulario">
                 <label for="cidadeUsuario">Cidade</label><br>
-                <input type="text" disabled="disabled" name="cidadeUsuario" id="cidadeUsuario"><br>
+                <input type="text" placeholder="Cidade" disabled="disabled" name="cidadeUsuario" id="cidadeUsuario"><br>
             </div>
 
             <div class="campoFormulario">
                 <label for="estadoUsuario">Estado</label><br>
-                <input type="text" disabled="disabled" name="estadoUsuario" id="estadoUsuario">
+                <input type="text" placeholder="Estado" disabled="disabled" name="estadoUsuario" id="estadoUsuario">
             </div>
         </div>
      </form>

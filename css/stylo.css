@@ -311,18 +311,46 @@ input {
 
 input[type="text"], input[type="email"], input[type="date"], input[type="password"] {
     padding: 5px;
-    border: solid 1px;
+    border: none;
+    border-bottom: solid 2px;
+    border-radius: 3px;
     width: 300px;
-    border-radius: 5px;
     height: 20px;
+}
+
+input[type="radio"]:hover {
+    transform: scale(1.2);
+    outline: none;
 }
 
 input:focus {
     outline: none;
-    border: solid 2px rgb(29, 15, 219);
+    border: solid 2px rgb(15, 15, 233);
+    box-shadow: 1px 1px 2px 1px;
+}
+
+input:focus:placeholder-shown {
+    outline: none;
+    border: solid 2px red;
+    box-shadow: 1px 1px 2px 1px;
+}
+
+input:disabled {
+    background-color: #2048912a;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    box-shadow: none;
+} 
+
+label {
+    margin-bottom: 7px;
+    font-size: 15px;
 }
 
 .tituloFormulario {
+    color: black;
+    font-family: helvetica;
     padding: 10px 30px;
     color: rgb(18, 42, 87);
     font-size: 28px;
@@ -343,16 +371,20 @@ input:focus {
 }
 
 .botaoFormulario {
-    width: 120px;
-    height: 40px;
-    border-radius: 30px;
-    border: solid black;
-    margin: 25px;
-    background-color: black;
-    color: #FFF;
-    font-weight: 700;
-    font-size: 15px;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #ffff;
+    background-color: #08558b;
+    cursor: pointer;
 }
 
 .botaoFormulario:hover {
@@ -368,5 +400,5 @@ input:focus {
 
 .checkbox {
     position: relative;
-    top: 5px;
+    top: 6px;
 }

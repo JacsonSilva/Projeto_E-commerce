@@ -56,7 +56,7 @@ function ocultarSenhaInformada() {
                 text: "As senhas não conferem. Tente novamente.",
                 icon: "error",
               });
-            senhaSegunda.value = "";
+              document.getElementById("senhaUsuarioSegunda").value = "";
         }
     }
 
@@ -98,8 +98,16 @@ function validarCpf(cpf) {
 		rev = 11 - (add % 11);	
 		if (rev == 10 || rev == 11)		
 			rev = 0;	
-		if (rev != parseInt(cpf.charAt(9)))		
-            return false;
+		if (rev != parseInt(cpf.charAt(9))) {		
+                
+            document.getElementById("cpfUsuario").value = "";
+                
+            swal({
+                title: "Atenção!",
+                text: "CPF inválido. Tente novamente.",
+                icon: "error",
+            });
+        }
     // Valida 2o digito	
 	add = 0;	
 	for (i = 0; i < 10; i ++)		
@@ -107,8 +115,16 @@ function validarCpf(cpf) {
 	    rev = 11 - (add % 11);	
 	    if (rev == 10 || rev == 11)	
 		    rev = 0;	
-	    if (rev != parseInt(cpf.charAt(10)))
-            alert("Atenção! CPF inválido. Tente novamente");
+	    if (rev != parseInt(cpf.charAt(10))) {
+        
+        document.getElementById("cpfUsuario").value = "";            
+        
+        swal({
+            title: "Atenção!",
+            text: "CPF inválido. Tente novamente.",
+            icon: "error",
+        });
+        }
                         
 	return true;   
 }
@@ -138,6 +154,10 @@ function validarCpf(cpf) {
                         icon: "error",
                       });
                     document.getElementById("cepUsuario").value = "";
+                    document.getElementById("ruaUsuario").value = "";
+                    document.getElementById("bairroUsuario").value = "";
+                    document.getElementById("cidadeUsuario").value = "";
+                    document.getElementById("estadoUsuario").value = "";
                 } else {
                     alert("Erro de requisição.");
                 }
@@ -192,17 +212,3 @@ function validarCpf(cpf) {
     }
 
     console.log(carregarEmail());
-
-// Função para armazenar senha informada na etapa 1 do formulário de cadastro
- 
-    function salvarSenha() {
-        localStorage.senha = document.getElementById("senhaUsuario").value;
-    }
-
-    console.log(localStorage.senha);
-
-    function carregarSenha() {
-        document.getElementById("senhaUsuarioInformada").value = localStorage.senha;
-    }
-
-    console.log(carregarSenha());

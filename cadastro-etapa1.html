@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/stylo.css">
-    <title>Document</title>
+    <title>Crie sua conta</title>
 </head>
 <body>
     <header>
@@ -29,30 +29,19 @@
         <div class="formulario">
             <div class="campoFormulario">
                 <label for="nomeUsuario">Nome</label><br>
-                <input type="text" placeholder="Nome e sobrenome" name="nomeUsuario" id="nomeUsuario" oninput="salvarNome()"><br>
+                <input type="text" placeholder="Nome e sobrenome" required="" name="nomeUsuario" id="nomeUsuario" oninput="salvarNome()"><br>
             </div>
 
             <div class="campoFormulario">    
                 <label for="cpfUsuario">CPF</label><br>
-                <input type="text" oninput="validarCpf(this.value)" placeholder="Digite apenas números" id="cpfUsuario" onblur="salvarCpf()"><br>
+                <input type="text" oninput="validarCpf(this.value)" placeholder="Digite apenas números" required="" name="cpfUsuario" id="cpfUsuario" onblur="salvarCpf()"><br>
             </div>
 
             <div class="campoFormulario">
                 <label for="emailUsuario">E-mail</label><br>
-                 <input type="email" onblur="validarEmail()" name="emailUsuario" id="emailUsuario" oninput="salvarEmail()"><br>
+                 <input type="email" onblur="validarEmail()" placeholder="E-mail" required="" name="emailUsuario" id="emailUsuario" oninput="salvarEmail()"><br>
             </div>
 
-            <div class="campoFormulario">
-                <label for="senhaUsuario">Senha</label><br>
-                <input type="password" minlength="8" onblur="validarSenha()" placeholder="Pelo menos 8 caracteres" name="senhaUsuario" id="senhaUsuario" oninput="salvarSenha()"><br>
-                <input class="checkbox" type="checkbox" onclick="ocultarSenha()" id="mostrarSenha"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
-            </div>
-
-            <div class="campoFormulario">
-                <label for="senhaUsuarioSegunda">Informe a senha novamente</label><br>
-                <input type="password" minlength="8" onblur="validarSegundaSenha()" placeholder="Pelo menos 8 caracteres" name="senhaUsuarioSegunda" id="senhaUsuarioSegunda"><br>
-                <input class="checkbox" type="checkbox" onclick="ocultarSegundaSenha()" id="mostrarSenhaSegunda"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
-            </div>
     </form>
 
     </section>
