@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
     </header>
     
     <section>
-        <h1 class="tituloFormulario">Crie sua conta</h1>
+        <h1 tabindex="0" class="tituloFormulario">Crie sua conta</h1>
     </section>
    
     <section id="cadastroEtapa1">
@@ -29,7 +29,7 @@
         <div class="form1-container">
             <div class="campoFormulario">
                 <label for="nomeUsuario">Nome</label><br>
-                <input type="text" placeholder="Nome e sobrenome" required="" name="nomeUsuario" id="nomeUsuario" oninput="salvarNome()"><br>
+                <input type="text" placeholder="Digite seu nome e sobrenome" required="" name="nomeUsuario" id="nomeUsuario" oninput="salvarNome()"><br>
             </div>
 
             <div class="campoFormulario">    
@@ -39,12 +39,15 @@
 
             <div class="campoFormulario">
                 <label for="emailUsuario">E-mail</label><br>
-                 <input type="email" onblur="validarEmail()" placeholder="E-mail" required="" name="emailUsuario" id="emailUsuario" oninput="salvarEmail()"><br>
+                 <input type="email" onblur="validarEmail()" placeholder="Digite seu e-mail" required="" name="emailUsuario" id="emailUsuario" oninput="salvarEmail()"><br>
             </div>
 
     </form>
 
     </section>
+
+    <p tabindex="0" style="text-align: center; padding: 0 0 15px 0;">Ao criar uma conta, você concorda com as <a href="">Condições de Uso</a> da<br>
+        Fast Store e aceita a <a href="">Política de Privacidade</a>.</p>
     
     <section class="botoesFormulario">
 
@@ -54,8 +57,13 @@
 
     <p style="text-align: center; padding: 0 0 15px 0">Já possui uma conta? <a href="Login.html">Faça seu login aqui</a>.</p>
    
-    <p style="text-align: center">Ao criar uma conta, você concorda com as <a href="">Condições de Uso</a> da<br>
-            Fast Store e aceita a <a href="">Política de Privacidade</a>.</p>
+    <footer> 
+        <div class="flex-container footer">
+            <p>&copy; 2022 CSS Flexbox</p>
+            <p>Desenvolvido por: Devs Full Stack Tera - Desenvolvedores Web</p>
+        </div>
+                
+     </footer>
     
     <script src="app/app.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

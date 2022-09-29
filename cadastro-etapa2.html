@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,18 +39,21 @@
                
             <div class="campoFormulario">
                 <label for="idUsuario">Documento de identificação</label><br>
-                <input type="text" placeholder="Número do RG ou da CNH" required="" name="idUsuario" id="idUsuario"><br>
+                <input type="text" placeholder="Digite número do RG ou da CNH" required="" name="idUsuario" id="idUsuario"><br>
             </div>
-                
-            <p class="campoFormulario">Sexo</p>
-                <div class="selecaoFormulario">
+            
+            <div class="selecaoFormulario">
+                <p class="campoFormulario">Sexo</p>
+                    <fieldset style="border: none">
                     <input type="radio" name="sexoUsuario" id="masculino" value="Masculino">
                     <label for="masculino">Feminino</label><br>
                     <input type="radio" name="sexoUsuario" id="feminino" value="Feminino">
                     <label for="feminino">Masculino</label><br>
                     <input type="radio" name="sexoUsuario" id="naoInformado" value="Não informado">
-                    <label for="feminino">Prefiro não informar</label><br>
+                    <label for="nãoInformar">Prefiro não informar</label><br>
+                    </fieldset>
                 </div>
+
             <div class="campoFormulario">
                 <label for="nascimentoUsuario">Data de nascimento</label><br>
                 <input type="date" required="" name="nascimentoUsuario" id="nascimentoUsuario"><br>
@@ -63,19 +66,19 @@
 
             <div class="campoFormulario">
                 <label for="senhaUsuario">Senha</label><br>
-                <input type="password" minlength="8" onblur="validarSenha()" placeholder="Pelo menos 8 caracteres" required="" name="senhaUsuario" id="senhaUsuario"><br>
-                <input class="checkbox" type="checkbox" onclick="ocultarSenha()" id="mostrarSenha"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
+                <input type="password" minlength="8" onblur="validarSenha()" placeholder="A senha deve ter pelo menos 8 caracteres" required="" name="senhaUsuario" id="senhaUsuario"><br>
+                <input class="checkbox" type="checkbox" onclick="ocultarSenha()" id="mostrarSenha"><div tabindex="0" style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
             </div>
 
             <div class="campoFormulario">
                 <label for="senhaUsuarioSegunda">Informe a senha novamente</label><br>
-                <input type="password" minlength="8" onblur="validarSegundaSenha()" placeholder="Pelo menos 8 caracteres" required="" name="senhaUsuarioSegunda" id="senhaUsuarioSegunda"><br>
-                <input class="checkbox" type="checkbox" onclick="ocultarSegundaSenha()" id="mostrarSenhaSegunda"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
+                <input type="password" minlength="8" onblur="validarSegundaSenha()" placeholder="A senha deve ter pelo menos 8 caracteres" required="" name="senhaUsuarioSegunda" id="senhaUsuarioSegunda"><br>
+                <input class="checkbox" type="checkbox" onclick="ocultarSegundaSenha()" id="mostrarSenhaSegunda" alt="Mostrar senha"><div style="font-size: small; position: relative; left: 18px; bottom: 10px">Mostrar senha</div>
             </div>
 
             <div class="campoFormulario">
                 <label for="cepUsuario">CEP</label><br>
-                <input type="text" placeholder="CEP" required="" name="cepUsuario" id="cepUsuario"><br>
+                <input type="text" placeholder="Digite o CEP" required="" name="cepUsuario" id="cepUsuario"><br>
             </div>
 
             <div class="campoFormulario">
@@ -85,12 +88,12 @@
 
             <div class="campoFormulario">
                 <label for="nEndUsuario">Número</label><br>
-                <input type="text" placeholder="Número" placeholder="Número" required="" name="nEndUsuario" id="nEndUsuario"><br>
+                <input type="text" placeholder="Digite o número do endereço" placeholder="Digite o número do endereço" required="" name="nEndUsuario" id="nEndUsuario"><br>
             </div>
 
             <div class="campoFormulario">
                 <label for="compEndUsuario">Complemento</label><br>
-                <input type="text" placeholder="Apartamento, bloco etc." name="compEndUsuario" id="compEndUsuario"><br>
+                <input type="text" placeholder="Digite o número do apartamento, bloco etc." name="compEndUsuario" id="compEndUsuario"><br>
             </div>
 
             <div class="campoFormulario">
@@ -117,7 +120,15 @@
     <a href="cadastro-etapa1.html"><button class="botaoFormulario">Voltar</button></a>
     <a href=""><button class="botaoFormulario">Concluir</button></a>
 
-    </section> 
+    </section>
+
+    <footer> 
+        <div class="flex-container footer">
+            <p>&copy; 2022 CSS Flexbox</p>
+            <p>Desenvolvido por: Devs Full Stack Tera - Desenvolvedores Web</p>
+        </div>
+        
+    </footer>
 
         <script src="app/app.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

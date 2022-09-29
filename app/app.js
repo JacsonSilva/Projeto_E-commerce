@@ -3,11 +3,9 @@
     function validarSenha() {
         let comprimentoSenha = document.getElementById("senhaUsuario");
         if(comprimentoSenha.value.length > 0 && comprimentoSenha.value.length < 8) {
-            swal({
-                title: "Atenção!",
-                text: "A senha deve ter pelo menos 8 caracteres.",
-                icon: "error",
-              });
+            
+            alert("Atenção! A senha deve ter pelo menos 8 caracteres.");
+
             comprimentoSenha.value = "";
         }
     }
@@ -51,12 +49,10 @@ function ocultarSenhaInformada() {
         let senhaSegunda = document.getElementById("senhaUsuarioSegunda").value;
         let senhaPrimeira = document.getElementById("senhaUsuario").value;
         if(senhaSegunda !== senhaPrimeira) {
-            swal({
-                title: "Atenção!",
-                text: "As senhas não conferem. Tente novamente.",
-                icon: "error",
-              });
-              document.getElementById("senhaUsuarioSegunda").value = "";
+ 
+            alert("Atenção! As senhas não conferem. Tente novamente.");
+
+            document.getElementById("senhaUsuarioSegunda").value = "";
         }
     }
 
@@ -65,11 +61,9 @@ function ocultarSenhaInformada() {
         var email = document.getElementById("emailUsuario");
 
         if(!email.checkValidity()) {
-            swal({
-                title: "Atenção!",
-                text: "Digite um e-mail válido.",
-                icon: "error",
-              });
+           
+            alert("Atenção! Digite um e-mail válido.");
+           
             email.value = "";
         }
     }
@@ -102,11 +96,7 @@ function validarCpf(cpf) {
                 
             document.getElementById("cpfUsuario").value = "";
                 
-            swal({
-                title: "Atenção!",
-                text: "CPF inválido. Tente novamente.",
-                icon: "error",
-            });
+            alert("Atenção! CPF inválido. Tente novamente.");
         }
     // Valida 2o digito	
 	add = 0;	
@@ -119,11 +109,7 @@ function validarCpf(cpf) {
         
         document.getElementById("cpfUsuario").value = "";            
         
-        swal({
-            title: "Atenção!",
-            text: "CPF inválido. Tente novamente.",
-            icon: "error",
-        });
+        alert("Atenção! CPF inválido. Tente novamente.");
         }
                         
 	return true;   
@@ -147,12 +133,13 @@ function validarCpf(cpf) {
                     document.getElementById("bairroUsuario").value = endereco.neighborhood;
                     document.getElementById("cidadeUsuario").value = endereco.city;
                     document.getElementById("estadoUsuario").value = endereco.state;
+
+                    document.querySelector("nEndUsuario").focus();
+                    
                 } else if(request.status === 404){
-                    swal({
-                        title: "Atenção!",
-                        text: "CEP inválido. Tente novamente.",
-                        icon: "error",
-                      });
+
+                    alert("Atenção! CEP inválido. Tente novamente.");
+
                     document.getElementById("cepUsuario").value = "";
                     document.getElementById("ruaUsuario").value = "";
                     document.getElementById("bairroUsuario").value = "";
